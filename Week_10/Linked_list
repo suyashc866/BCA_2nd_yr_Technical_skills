@@ -1,0 +1,209 @@
+
+// Classes & Objects 
+
+
+// 1. Class 
+
+// 	A class is a blueprint to create objects.
+	
+// 	class Node {
+// 	    int x = 0;
+// 	    int y = 0;
+// 	}
+// 		○ x and y are data members (variables) of the class. 
+// 		○ Default values: 0 
+
+
+
+// 2. Object Creation
+
+
+// 	Node n1 = new Node();
+	
+	
+// 		○ n1 is a reference variable 
+// 		○ new Node() creates an object in memory 
+
+// 3. Accessing & Modifying Data
+
+// 	n1.x = 10;
+	
+// 	n1.y = 20;
+	
+	
+	
+// 		○ Access using dot operator (.) 
+// 		○ Changes values inside the object 
+
+// 4. Reference Assignment 
+
+
+// 	Node n2 = n1;
+	
+// 		○ n2 is NOT a new object 
+// 		○ Both n1 and n2 point to same object 
+		
+// 	Effect:
+	
+// 		n2.x = 100;
+		
+// 		Now:
+		
+// 			§ n1.x = 100 
+// 			§ n2.x = 100 
+			
+// 		Because both refer to same memory
+
+
+// 5. Another Reference
+
+// 	Node n3 = n1;
+	
+	
+// 		○ Again, no new object created 
+// 		○ n1, n2, n3 → same object 
+
+
+// 6. Creating a New Object
+	
+// 	Node n4 = new Node();
+	
+// 		○ New separate object created 
+
+
+// 7. Changing Reference
+
+
+// 	n3 = n4;
+	
+// 	Now:
+	
+// 		○ n3 points to new object (n4) 
+		
+// 		○ n1 and n2 still point to old object 
+	
+	
+
+
+
+
+// Constructors 
+
+// 		○ A constructor is a special method that is called when an object is created. 
+// 		○ It is used to initialize object properties (variables). 
+
+
+//  Key Properties of Constructor
+
+// 		a. It is automatically invoked when an object is created. 
+// 		b. It does not return anything . 
+// 		c. It is mainly used for initialization of object data. 
+
+// Constructor Naming Rule
+// In Java
+// 		○ Constructor name = same as class name 
+	
+// 	class Node {
+	
+// 	    Node() {
+// 	        // constructor
+// 	    }
+	
+// 	}
+
+// Object Creation (Constructor Call)
+
+// 	Node t1 = new Node();
+
+// 	• new Node() → constructor is called 
+// 	• Memory is allocated and object is initialized 
+// 	• t1 is a reference variable pointing to the object
+
+
+
+
+
+
+
+
+
+// Object Reference as Data Member 
+
+
+
+
+// Class Structure
+
+
+// 	class Node {
+// 	    int data;
+// 	    Node next;   // object reference (same class type)
+	
+// 	    Node(int x) {
+// 	        data = x;
+// 	        next = null;
+// 	    }
+// 	}
+	
+	
+	
+// Key Points:
+
+// 		○ data → stores value 
+// 		○ next → stores reference of another Node 
+// 		○ next = null → means no next node (end of list) 
+
+
+
+
+// Object Creation & Linking
+	
+// 		Node t1 = new Node(10);
+// 		t1.next = new Node(20);
+	
+	
+// Memory Representation:
+
+// 	  t1 ──> [10 | address] ──> [20 | null]
+
+
+
+
+
+// Creating Another Reference
+
+// 	Node t2 = t1.next;
+	
+// 		○ t2 points to second node 
+
+// Accessing Data
+
+// 	System.out.println(t2.data);        // 20
+// 	System.out.println(t1.next.data);   // 20
+	
+// 		○ Both give same result because both point to same node 
+
+// Adding Next Node
+
+
+// 	t2.next = new Node(30);
+// 	t2   = t2.next
+	
+
+
+// 	t1 ──> [10 | • ] ──> [20 | • ] ──> [30 | null]
+// 	          ↑             ↑
+// 	         t1            t2
+
+// Observations
+
+// 	• Node next; → creates link between objects 
+	
+// 	• Each object stores: 
+// 		○ Data 
+// 		○ Address of next object 
+		
+// 	• This forms a chain-like structure
+
+
+
